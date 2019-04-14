@@ -241,7 +241,7 @@ $ python manage.py runserver
 		\item loop: \{\% for obj in list \%\} body \{\% endfor \%\}
 		\item condition: \{\% if condition \%\}\{\% elif condition \%\}\{\% else \%\}\{\% endif \%\}
 		\item block: \{\% block name \%\} code \{\% endblock \%\}
-		\item in forms: \{\% clrf\_token \%\}
+		\item in forms: \{\% csrf\_token \%\}
 		\item statics: \{\% load staticfiles \%\}
 		\item source: src=\{\% static "a picture addr"\%\}
 	\end{itemize}
@@ -293,7 +293,7 @@ url(r'<a_pattern>/', include('<app_name>.urls')),
 	There are two ways to include static files like images in our project:
 	\begin{itemize}
 		\item fetching data from the database. (not covered)
-		\item defining a folder and get images from there.
+		\item defining a folder and getting images from there.
 	\end{itemize}
 	There will be folders named: css, js, images etc. in a directory named static, located in project directory.
 	\\We should locate STATIC\_DIR at the end of settings.py.
