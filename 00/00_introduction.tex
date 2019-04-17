@@ -9,6 +9,7 @@
 	\usecolortheme{seagull}  %plain
 	
 }
+\usepackage{subfig}
 \usepackage{hyperref}
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
@@ -26,7 +27,7 @@
 	\medskip
 	\textit{} % Your email address
 }
-\date{Winter 2019} % Date, can be changed to a custom date
+\date{Spring 2019} % Date, can be changed to a custom date
 
 \begin{document}
 	
@@ -42,171 +43,220 @@
 %	PRESENTATION SLIDES
 
 \section{What is Django} 
+
+\begin{frame}
+\begin{figure}
+	\includegraphics[width=\linewidth]{Pics/PyDjango.jpg}
+\end{figure}
+\end{frame}
+
 \begin{frame}
 \frametitle{What is Django}
-	\begin{enumerate}
-	\item Django is a free and open-source web framework written in python.
-	\item It supports MVC architectural pattern. 
-	\item Django Software Foundation is an independent 
-	organization who is responsible for the maintenance of django framework.
-	\end{enumerate}
+	\centering
+	\Large
+	free and open-source \color{green}web framework \color{black}
+\end{frame}
+
+\begin{frame}
+\frametitle{Once upon a time :)}
+	\centering
+	\large
+	Python encourages everyone to code.\\
+	Even \color{green}journalists.\color{black}
+\end{frame}
+
+\section{Python}
+\begin{frame}
+\frametitle{Why coding in python?}
+\begin{itemize}
+	\item large community
+	\item less code
+\end{itemize}
+\begin{figure}
+	\includegraphics[width=0.6\linewidth]{Pics/python_stack.png}
+\end{figure}
+\end{frame}
+
+\subsection{Virtual environment}
+\begin{frame}
+	\frametitle{Virtual environment}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{Pics/venv.jpg}
+	\end{figure}
+\end{frame}
+
+\subsection{Package manager}
+\begin{frame}
+	\frametitle{install Django on venv}
+	\centering
+	\Large
+	\begin{block}{}
+	\$ pip install django\\
+	\$ django-admin startproject <name>
+	\end{block}
 \end{frame}
 
 \begin{frame}
 	\begin{figure}
-		\includegraphics[width=\linewidth]{Pics/PyDjango.jpg}
+		\includegraphics[width=0.8\linewidth]{Pics/proj.jpeg}
 	\end{figure}
 \end{frame}
-\subsection{Free and Open-Source}
+
 \begin{frame}
-\frametitle{Free and Open-Source}
-\begin{itemize}
-	\item It was initially released by Adrian Holovaty and Simon Willson on 21 July 2005.
-	\item Repository: \href{github.com/django/django}{github.com/django/django}
-	\item Website: \href{www.djangoproject.com}{www.djangoproject.com}
-\end{itemize}
-\end{frame}
-
-
-\subsection{Web Framework}
-\begin{frame}
-	\frametitle{Why Using a Framework?}
-	\begin{block}{Web Framework}
-		A web framework is a group of software structures, designed to support development of web application. We as developers, use frameworks to be provided with a unique and standard approach.
-	\end{block}
-
+\frametitle{Project files}
 	\begin{itemize}
-		\item We can map requested URL from user to the code we have written.
-		\item We can inject calculated values and information from database that leads to dynamic HTML files.
+		\item \_\_init\_\_.py
+		\item settings.py
+		\item urls.py
+		\item wsgi.py
+		\item manage.py
 	\end{itemize}
 \end{frame}
 
-
-\subsection{Python}
 \begin{frame}
-\frametitle{Why Coding in Python?}
+	\frametitle{Django application}
+	\centering
+	\Large
+	\begin{block}{}
+		\$ python manage.py runserver\\
+		\$ python manage.py startapp <name>
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Application files}
 \begin{itemize}
-	\item There is a growing community of developers waiting for you.
-	\item Less lines of code means less chance of facing bugs and easier maintenance over time.
+	\item migrations
+	\item \_\_init\_\_.py
+	\item admin.py
+	\item apps.py
+	\item models.py
+	\item tests.py
+	\item views.py
+	\item urls.py
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Templates}
+	\begin{itemize}
+		\item templates directory
+		\item add it in settings
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 \begin{figure}
-	\includegraphics[width=0.7\linewidth]{Pics/python_ranking.png}
-	\caption{IEEE spectrum latest ranking}
+	\includegraphics[width=0.8\linewidth]{Pics/why.png}
 \end{figure}
 \end{frame}
 
-\subsection{MVC}
 \begin{frame}
-\frametitle{What is MVC or MVT?}
-MVC architectural pattern enables us to make Data layer, Presentation layer and Business Logic layer isolated. As a result our project will be easier to maintain and understand. It loosens the coupling between each layer of project and improves modularity and cohesion of code.
-\begin{block}
-
-\begin{itemize}
-	\item "M" stands for Model. It is our gateway to database and models.py is responsible for this purpose.
-	\item "V" stands for View. It is the representation of the application to the end user and Templates are responsible for this purpose.
-	\item "C" stands for Control. It is the implementation of the underlying logic behind our project and views.py plays this role in a django project.
-\end{itemize}
-\end{block}
-	considering the beginning of names "models.py", "views.py" and "templates", makes it possible for us to use MVT and MVC interchangeably.
+\frametitle{What about static files}
+\begin{figure}
+	\includegraphics[width=0.6\linewidth]{Pics/css.jpeg}
+\end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{MVT in Practice}
-This is how a Django web application works:
+	\frametitle{Database}
+	\begin{itemize}
+		\centering
+		\large
+		\item classes for tables
+		\item attributes for columns
+		\item instances for records		
+	\end{itemize}
+\end{frame}
+
+\section{MTV}
+\begin{frame}
+\frametitle{What is MTV?}
+
 \begin{figure}
 	\includegraphics[width=\linewidth]{Pics/High_level.png}
 \end{figure}
 \end{frame}
 
-\subsection{Maintenance}
 \begin{frame}
-	\frametitle{Maintenance}
+\frametitle{What is MTV?}
+
+\begin{block}
+	
 	\begin{itemize}
-		\item It is highly maintained by Django Software Foundation.
-		\item The latest released version is 2.1.5 that has been committed in January 2019.
-		\item There will be new features, bug-fixes and security improvements every now and then.
-		\item there are dozens of free books, online tutorials and a strong documentation provided.
+		\item "M"odel : data layer. $\rightarrow$ models.py 
+		\item "T"emplate : presentation layer. $\rightarrow$ templates/
+		\item "V"iew : business logic layer. $\rightarrow$ views.py 
+		
+	\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Forms: user inputs}
+	\begin{itemize}
+		\centering
+		\large
+		\item forms.py
+		\item similar to models
 	\end{itemize}
 \end{frame}
 
-\section{Why Using Django?}
-
-\subsection{Fast}
 \begin{frame}
-\frametitle{Why Using Django? (1)}
-	
+	\frametitle{Simpler urls}
 	\begin{itemize}
-		\item Low coupling, rapid development, and the principle of don't repeat yourself.
-		\item Reusability of modules (apps) and pluggability of components (tools)
+		\centering
+		\large
+		\item app\_name in urls.py
+		\item relative url in href
 	\end{itemize}
+\end{frame}
 
+\begin{frame}
+\frametitle{Inheritance in templates}
+\begin{itemize}
+	\centering
+	\large
+	\item create base.html
+	\item make blocks in base file
+	\item use extend in child file
+\end{itemize}
+\end{frame}
+
+
+\section{Django in real world}
+\begin{frame}	
 	\begin{figure}
-		\includegraphics[width=0.8\linewidth]{Pics/Django/index.jpeg}
+		\centering
+		\subfloat[instagram]{\includegraphics[width=0.5\textwidth]{Pics/insta.png}}
+		\subfloat[spotify]{\includegraphics[width=0.5\textwidth]{Pics/spotify.png}}
 	\end{figure}
 \end{frame}
 
-\subsection{Equipped}
-\begin{frame}
-\frametitle{Why Using Django? (2)}
-\begin{itemize}
-	\item Django Admin helps us authenticate users and other administrative work easily.
-	\item Django officially supports four database backends: PostgreSQL, MySQL, SQLite, and Oracle.
-	\item There are many servers who offer free deployment facilities for django projects.
-\end{itemize}
+\begin{frame}	
 \begin{figure}
-	\includegraphics[width=0.8\linewidth]{Pics/Django/index2.jpeg}
+	\centering
+	\subfloat[mozilla]{\includegraphics[width=0.5\textwidth]{Pics/mozilla.jpeg}}
+	\subfloat[dropbox]{\includegraphics[width=0.5\textwidth]{Pics/dropbox.jpg}}
 \end{figure}
 \end{frame}
 
-\subsection{Secure}
-\begin{frame}
-\frametitle{Why Using Django? (3)}
+\begin{frame}	
 \begin{figure}
-	\includegraphics[width=0.8\linewidth]{Pics/Django/index3.jpeg}
+	\centering
+	\subfloat[youtube]{\includegraphics[width=0.5\textwidth]{Pics/youtube.png}}
+	\subfloat[pinterest]{\includegraphics[width=0.4\textwidth]{Pics/pin.png}}
 \end{figure}
 \end{frame}
 
-\subsection{Scalable}
 \begin{frame}
-\frametitle{Why Using Django? (4)}
-\begin{figure}
-	\includegraphics[width=0.8\linewidth]{Pics/Django/index4.jpeg}
-\end{figure}
-\end{frame}
-
-\subsection{Versatile}
-\begin{frame}
-\frametitle{Why Using Django? (5)}
-\begin{figure}
-	\includegraphics[width=0.8\linewidth]{Pics/Django/index5.jpeg}
-\end{figure}
-\end{frame}
-
-\section{Where to Use Django}
-\begin{frame}
-	\frametitle{Django in Real World}
-	Here are some of the most well-known websites using Django most of which are social networks:
-	
+	\frametitle{What next?}
 	\begin{itemize}
-		\item Public Broadcasting Service (PBS)
-		\item Instagram
-		\item Spotify
-		\item YouTube
-		\item Dropbox
-		\item Mozilla
-		\item The Washington Times
-		\item Disqus
-		\item Bitbucket
-		\item Nextdoor
-		\item Pinterest
-		\item .....
+		\centering
+		\large
+		\item Blog project
+		\item Social network project
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{What Will We Do With Django?}
-	In following sessions after getting familiar with basics of python and django, we will get into making a simple blog project. It has two major phases and we will add new features to it step by step.
-	Finally, you can develop your own blog website for sharing your posts, curriculum vitae etc.
 \end{frame}
 
 \begin{frame}
@@ -216,7 +266,13 @@ This is how a Django web application works:
 \end{frame}
 
 \begin{frame}
-\Huge{\centerline{The End}}
+\begin{figure}
+	\includegraphics[width=0.8\linewidth]{Pics/end.jpg}
+\end{figure}
+
+\Huge
+\centering
+The End
 \end{frame}
 
 \end{document} 
